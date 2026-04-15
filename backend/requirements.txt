@@ -1,0 +1,49 @@
+# FastAPI核心
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# 数据库
+sqlmodel>=0.0.14
+sqlalchemy>=2.0.23
+aiosqlite>=0.19.0
+alembic>=1.12.1
+
+# LangChain
+langchain>=0.1.0
+langchain-openai>=0.0.5
+langchain-anthropic>=0.0.1
+langchain-community>=0.0.20
+langgraph>=0.0.26
+
+# 向量数据库
+qdrant-client>=1.7.0
+chromadb>=0.4.22
+
+# 缓存
+redis>=5.0.0
+
+# 数据处理
+pandas>=2.1.4
+numpy>=1.26.2
+
+# 工具
+python-dotenv>=1.0.0
+python-multipart>=0.0.6
+aiofiles>=23.2.1
+
+# OCR
+pytesseract>=0.3.10
+pillow>=10.1.0
+
+# 测试
+pytest>=7.4.3
+pytest-asyncio>=0.21.1
+pytest-cov>=4.1.0
+
+# HTTP客户端
+httpx>=0.25.0
+
+# 异步支持（Python 3.7+ 内置，无需安装）
+# asyncio is built-in since Python 3.7

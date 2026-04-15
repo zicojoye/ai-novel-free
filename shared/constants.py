@@ -1,0 +1,143 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+共享常量定义
+"""
+
+# API相关
+API_VERSION = "v1"
+API_BASE_URL = "/api"
+
+# 任务状态
+TASK_STATUS_PENDING = "pending"
+TASK_STATUS_RUNNING = "running"
+TASK_STATUS_COMPLETED = "completed"
+TASK_STATUS_FAILED = "failed"
+TASK_STATUS_CANCELLED = "cancelled"
+
+# Agent类型
+AGENT_AUTHOR = "author"
+AGENT_EDITOR = "editor"
+AGENT_REVIEWER = "reviewer"
+AGENT_PUBLISHER = "publisher"
+AGENT_WORLD_BUILDER = "world_builder"
+AGENT_KNOWLEDGE_MANAGER = "knowledge_manager"
+AGENT_SEMANTIC_RETRIEVER = "semantic_retriever"
+AGENT_LOGIC_CHECKER = "logic_checker"
+AGENT_STYLE_CHECKER = "style_checker"
+
+# 模型提供商
+MODEL_PROVIDER_OPENAI = "openai"
+MODEL_PROVIDER_ANTHROPIC = "anthropic"
+MODEL_PROVIDER_DEEPSEEK = "deepseek"
+MODEL_PROVIDER_LOCAL = "local"
+
+# 默认模型
+DEFAULT_MODEL_OPENAI = "gpt-4-turbo-preview"
+DEFAULT_MODEL_ANTHROPIC = "claude-3-opus-20240229"
+DEFAULT_MODEL_DEEPSEEK = "deepseek-chat"
+
+# 缓存相关
+CACHE_TTL_SHORT = 300  # 5分钟
+CACHE_TTL_MEDIUM = 3600  # 1小时
+CACHE_TTL_LONG = 86400  # 1天
+
+L1_CACHE_MAX_SIZE = 1000
+L2_CACHE_MAX_SIZE = 10000
+
+# 世界观维度
+WB_DIMENSIONS = [
+    "世界观概述",
+    "地理环境",
+    "人物设定",
+    "技能体系",
+    "势力格局",
+    "场景设定",
+    "物品设定",
+    "历史背景",
+    "规则设定",
+    "文化特色"
+]
+
+# 内容类型
+CONTENT_TYPE_WORLD_BUILDING = "world_building"
+CONTENT_TYPE_CHARACTER = "character"
+CONTENT_TYPE_SKILL = "skill"
+CONTENT_TYPE_FACTION = "faction"
+CONTENT_TYPE_SCENE = "scene"
+CONTENT_TYPE_ITEM = "item"
+CONTENT_TYPE_CHAPTER = "chapter"
+CONTENT_TYPE_PLOT = "plot"
+CONTENT_TYPE_FORESHADOW = "foreshadow"
+CONTENT_TYPE_HOOK = "hook"
+CONTENT_TYPE_KNOWLEDGE = "knowledge"
+
+# 小说类型
+GENRE_URBAN = "都市"
+GENRE_FANTASY = "奇幻"
+GENRE_XIANXIA = "仙侠"
+GENRE_SCIFI = "科幻"
+GENRE_ROMANCE = "言情"
+GENRE_HISTORY = "历史"
+GENRE_WAR = "军事"
+
+# 发布平台
+PLATFORM_FANQIE = "fanqie"  # 番茄小说
+PLATFORM_QIDIAN = "qidian"  # 起点中文网
+PLATFORM_JINJIANG = "jinjiang"  # 晋江文学城
+PLATFORM_ZONGHENG = "zongheng"  # 纵横中文网
+
+# 默认配置
+DEFAULT_CHAPTER_TARGET_WORDS = 1000
+DEFAULT_PROJECT_NAME = "未命名项目"
+DEFAULT_AUTHOR_NAME = "匿名作者"
+
+# 错误码
+ERROR_SUCCESS = 0
+ERROR_INVALID_PARAMS = 1001
+ERROR_NOT_FOUND = 1002
+ERROR_UNAUTHORIZED = 1003
+ERROR_FORBIDDEN = 1004
+ERROR_SERVER_ERROR = 5000
+
+# 消息
+MESSAGE_SUCCESS = "操作成功"
+MESSAGE_NOT_FOUND = "资源不存在"
+MESSAGE_UNAUTHORIZED = "未授权"
+MESSAGE_FORBIDDEN = "无权限"
+MESSAGE_SERVER_ERROR = "服务器错误"
+
+# 分页
+DEFAULT_PAGE_SIZE = 20
+MAX_PAGE_SIZE = 100
+
+# 文件上传
+UPLOAD_MAX_SIZE = 10 * 1024 * 1024  # 10MB
+ALLOWED_IMAGE_FORMATS = ["jpg", "jpeg", "png", "gif", "webp"]
+ALLOWED_DOCUMENT_FORMATS = ["txt", "md", "json"]
+
+# Agent配置
+AGENT_TIMEOUT = 60
+AGENT_MAX_RETRIES = 3
+
+# LLM配置
+LLM_MAX_TOKENS = 4000
+LLM_TEMPERATURE = 0.7
+LLM_TOP_P = 0.9
+
+# RAG配置
+RAG_TOP_K = 5
+RAG_SIMILARITY_THRESHOLD = 0.7
+
+# 备份相关
+BACKUP_RETENTION_DAYS = 30
+BACKUP_MAX_COUNT = 10
+
+# 调度相关
+SCHEDULER_CHECK_INTERVAL = 60  # 秒
+
+# 日志级别
+LOG_LEVEL_DEBUG = "DEBUG"
+LOG_LEVEL_INFO = "INFO"
+LOG_LEVEL_WARNING = "WARNING"
+LOG_LEVEL_ERROR = "ERROR"

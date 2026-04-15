@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Novel Platform</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- 白屏诊断脚本 -->
+    <script>
+      window.__LOAD_ERRORS__ = [];
+      window.addEventListener('error', function(e) {
+        window.__LOAD_ERRORS__.push({type:'error', msg: e.message, file: e.filename, line: e.lineno, stack: e.error && e.error.stack});
+        setTimeout(function() {
+          var root = document.getElementById('root');
+          if (root && !root.hasChildNodes()) {
+            root.innerHTML = '<div style="padding:20px;font-family:monospace;background:#fff0f0;border:3px solid red;margin:10px;border-radius:8px">' +
+              '<h2 style="color:red;margin:0 0 10px">🔴 白屏错误诊断</h2>' +
+              window.__LOAD_ERRORS__.map(function(e) {
+                return '<div style="margin-bottom:10px;padding:10px;background:#fff;border-radius:4px">' +
+                  '<b style="color:red">' + e.type + ':</b> ' + e.msg + '<br>' +
+                  '<small style="color:#666">' + (e.file||'') + (e.line?' :'+e.line:'') + '</small>' +
+                  (e.stack ? '<pre style="margin:5px 0;font-size:11px;overflow:auto;max-height:200px">' + e.stack + '</pre>' : '') +
+                '</div>'
+              }).join('') +
+            '</div>';
+          }
+        }, 1000);
+      }, true);
+      window.addEventListener('unhandledrejection', function(e) {
+        window.__LOAD_ERRORS__.push({type:'promise', msg: String(e.reason), stack: e.reason && e.reason.stack});
+        setTimeout(function() {
+          var root = document.getElementById('root');
+          if (root && !root.hasChildNodes()) {
+            root.innerHTML = '<div style="padding:20px;font-family:monospace;background:#fff0f0;border:3px solid red;margin:10px;border-radius:8px">' +
+              '<h2 style="color:red;margin:0 0 10px">🔴 白屏Promise错误诊断</h2>' +
+              '<p>' + String(e.reason) + '</p>' +
+              '<pre style="overflow:auto;font-size:11px">' + (e.reason && e.reason.stack || '') + '</pre>' +
+            '</div>';
+          }
+        }, 1000);
+      });
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

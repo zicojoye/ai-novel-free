@@ -1,0 +1,12 @@
+// 导出所有服务
+export { projectService } from './projectService'
+export { chapterService } from './chapterService'
+export { worldbuildingService } from './worldbuildingService'
+export { knowledgeService } from './knowledgeService'
+export { agentService } from './agentService'
+export { promptService } from './promptService'
+export { foreshadowService } from './foreshadowService'
+export { characterService } from './characterService'
+export { authService } from './authService'
+export { settingsService } from './settingsService'
+export { aiService } from './aiService'

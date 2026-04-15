@@ -1,0 +1,41 @@
+{
+  "name": "ai-novel-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI小说创作平台 - 缝合10个开源项目",
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && python -m uvicorn main:app --reload --host 0.0.0.0 --port 8000",
+    "build": "npm run build:frontend",
+    "build:frontend": "cd frontend && npm run build",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd frontend && npm test",
+    "test:backend": "cd backend && pytest",
+    "lint": "npm run lint:frontend && npm run lint:backend",
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:backend": "cd backend && black . && isort .",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && pip install -r requirements.txt",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "keywords": [
+    "ai",
+    "novel",
+    "writing",
+    "langchain",
+    "langgraph",
+    "fastapi",
+    "react"
+  ],
+  "author": "AI Novel Community",
+  "license": "MIT",
+
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
